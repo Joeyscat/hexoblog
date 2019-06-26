@@ -107,3 +107,4 @@ theme: hexo-theme-matery
 deploy:
   type: git
   repo: https://github.com/Joeyscat/joeyscat.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: hexo
