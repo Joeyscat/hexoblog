@@ -50,6 +50,5 @@ $ scp -r /home/joey/img/ username@servername:/home/
 
 
 
-#### ——username:服务器用户名（需要相应密码）
-
-#### ——servername：服务器地址（IP）
+>——username:服务器用户名（需要相应密码）
+>——servername：服务器地址（IP）
