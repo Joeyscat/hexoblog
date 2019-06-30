@@ -1,5 +1,5 @@
 ---
-title: Redis data type-Redis string
+title: Redis数据类型之字符串类型
 date: 2019-06-28 20:50:28
 categories:
 - 笔记

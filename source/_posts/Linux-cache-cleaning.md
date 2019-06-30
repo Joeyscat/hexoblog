@@ -1,5 +1,5 @@
 ---
-title: Linux cache cleaning
+title: Linux下的缓存机制及清理buffer/cache/swap的方法梳理【转】
 date: 2018-03-16 21:27:53
 categories:
 - 笔记
