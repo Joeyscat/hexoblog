@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>爱包子的鱼</title>
+  
+  <subtitle>穷则独善其身？</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://joeyscat.github.io/"/>
+  <updated>2019-10-07T03:29:48.693Z</updated>
+  <id>https://joeyscat.github.io/</id>
+  
+  <author>
+    <name>Joey</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux下使用scp命令来通过ssh传输文件</title>
+    <link href="https://joeyscat.github.io/2019/06/30/linux-copy-files-with-scp/"/>
+    <id>https://joeyscat.github.io/2019/06/30/linux-copy-files-with-scp/</id>
+    <published>2019-06-30T12:10:28.000Z</published>
+    <updated>2019-10-07T03:29:48.693Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Linux下使用scp命令来通过ssh传输文件&quot;&gt;&lt;a href=&quot;#Linux下使用scp命令来通过ssh传输文件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://joeyscat.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Linux" scheme="https://joeyscat.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推荐视频</title>
+    <link href="https://joeyscat.github.io/2019/06/29/videos/"/>
+    <id>https://joeyscat.github.io/2019/06/29/videos/</id>
+    <published>2019-06-29T01:27:50.000Z</published>
+    <updated>2019-10-07T03:29:48.693Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;Hithere&quot;&gt;&lt;a href=&quot;#Hithere&quot; class=&quot;headerlink&quot; title=&quot;Hithere&quot;&gt;&lt;/a&gt;Hithere&lt;/h5&gt;&lt;h6
+        
+      
+    
+    </summary>
+    
+      <category term="视频" scheme="https://joeyscat.github.io/categories/%E8%A7%86%E9%A2%91/"/>
+    
+    
+      <category term="Video" scheme="https://joeyscat.github.io/tags/Video/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis数据类型之字符串类型</title>
+    <link href="https://joeyscat.github.io/2019/06/28/redis-data-type-redis-string/"/>
+    <id>https://joeyscat.github.io/2019/06/28/redis-data-type-redis-string/</id>
+    <published>2019-06-28T12:50:28.000Z</published>
+    <updated>2019-10-07T03:29:48.693Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Redis数据类型之字符串类型&quot;&gt;&lt;a href=&quot;#Redis数据类型之字符串类型&quot; class=&quot;headerlink&quot; title=&quot;Redis数据类型之字符串类型&quot;&gt;&lt;/a&gt;Redis数据类型之字符串类型&lt;/h2&gt;&lt;h3 id=&quot;字符串类型&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://joeyscat.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Redis" scheme="https://joeyscat.github.io/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gradle配置init.gradle解决下载速度慢问题</title>
+    <link href="https://joeyscat.github.io/2018/04/07/gradle-config-init-gradle/"/>
+    <id>https://joeyscat.github.io/2018/04/07/gradle-config-init-gradle/</id>
+    <published>2018-04-07T06:16:25.000Z</published>
+    <updated>2019-10-07T03:29:48.693Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;配置阿里云镜像&quot;&gt;&lt;a href=&quot;#配置阿里云镜像&quot; class=&quot;headerlink&quot; title=&quot;配置阿里云镜像&quot;&gt;&lt;/a&gt;配置阿里云镜像&lt;/h3&gt;&lt;p&gt;以下两种配置方式二选一&lt;/p&gt;
+&lt;h4 id=&quot;全局配置&quot;&gt;&lt;a href=&quot;#全局配置&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://joeyscat.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Gradle" scheme="https://joeyscat.github.io/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下的缓存机制及清理buffer/cache/swap的方法梳理【转】</title>
+    <link href="https://joeyscat.github.io/2018/03/16/linux-cache-cleaning/"/>
+    <id>https://joeyscat.github.io/2018/03/16/linux-cache-cleaning/</id>
+    <published>2018-03-16T13:27:53.000Z</published>
+    <updated>2019-10-07T03:29:48.693Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;Linux下的缓存机制及清理buffer-cache-swap的方法梳理【转】&quot;&gt;&lt;a href=&quot;#Linux下的缓存机制及清理buffer-cache-swap的方法梳理【转】&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://joeyscat.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Linux" scheme="https://joeyscat.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+</feed>
