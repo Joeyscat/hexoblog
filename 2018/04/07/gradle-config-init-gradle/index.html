@@ -5,12 +5,12 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Gradle配置init.gradle解决下载速度慢问题, 软件开发">
-    <meta name="description" content="配置阿里云镜像以下两种配置方式二选一
+    <meta name="description" content="配置阿里云镜像以下两种配置方式二选一😊:smile:
 全局配置新建配置文件 USER_HOME/.gradle/
 $ vim ~/.gradle/init.gradle
 allprojects{
     repositories {
-        def">
+  ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -384,7 +384,7 @@ allprojects{
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="配置阿里云镜像"><a href="#配置阿里云镜像" class="headerlink" title="配置阿里云镜像"></a>配置阿里云镜像</h3><p>以下两种配置方式二选一</p>
+                <h3 id="配置阿里云镜像"><a href="#配置阿里云镜像" class="headerlink" title="配置阿里云镜像"></a>配置阿里云镜像</h3><p>以下两种配置方式二选一<br>😊<br>:smile:</p>
 <h4 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h4><p>新建配置文件 USER_HOME/.gradle/</p>
 <pre class=" language-bash"><code class="language-bash">$ vim ~/.gradle/init.gradle</code></pre>
 <pre class=" language-java"><code class="language-java">allprojects<span class="token punctuation">{</span>
@@ -428,7 +428,25 @@ allprojects <span class="token punctuation">{</span>
         maven<span class="token punctuation">{</span> url <span class="token string">'http://maven.aliyun.com/nexus/content/repositories/jcenter'</span><span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -857,9 +875,8 @@ allprojects <span class="token punctuation">{</span>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            本站由&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;驱动
+            主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             
@@ -882,7 +899,7 @@ allprojects <span class="token punctuation">{</span>
                 var now = new Date();
 
                 function createtime() {
-                    var grt = new Date("06/28/2017 00:00:00");
+                    var grt = new Date("01/28/2018 00:00:00");
                     now.setTime(now.getTime() + 250);
                     days = (now - grt) / 1000 / 60 / 60 / 24;
                     dnum = Math.floor(days);
@@ -945,7 +962,6 @@ allprojects <span class="token punctuation">{</span>
 </footer>
 
 <div class="progress-bar"></div>
-
 
 <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">

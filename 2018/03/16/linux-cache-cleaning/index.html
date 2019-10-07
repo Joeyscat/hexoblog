@@ -412,7 +412,25 @@ KiB Swap:  8000508 total,  8000508 free,        0 used.  5590520 avail Mem  </co
 <blockquote>
 <p>vfs_cache_pressure=100    这个是默认值，内核会尝试重新声明<br>dentries和inodes，并采用一种相对于页面缓存和交换缓存比较”合理”的比例。<br>减少vfs_cache_pressure的值，会导致内核倾向于保留dentry和inode缓存。<br>增加vfs_cache_pressure的值，（即超过100时），则会导致内核倾向于重新声明dentries和inodes<br>总之，vfs_cache_pressure的值：<br>小于100的值不会导致缓存的大量减少<br>超过100的值则会告诉内核你希望以高优先级来清理缓存。<br>其实无论vfs_cache_pressure的值采用什么值，内核清理缓存的速度都是比较低的。<br>如果将此值设置为10000，系统将会将缓存减少到一个合理的水平。</p>
 </blockquote>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -650,12 +668,12 @@ KiB Swap:  8000508 total,  8000508 free,        0 used.  5590520 avail Mem  </co
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            配置阿里云镜像以下两种配置方式二选一
+                            配置阿里云镜像以下两种配置方式二选一😊:smile:
 全局配置新建配置文件 USER_HOME/.gradle/
 $ vim ~/.gradle/init.gradle
 allprojects{
     repositories {
-        def
+  
                         
                     </div>
                     <div class="publish-info">
@@ -846,9 +864,8 @@ allprojects{
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
-            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
+            本站由&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;驱动
+            主题&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             
@@ -871,7 +888,7 @@ allprojects{
                 var now = new Date();
 
                 function createtime() {
-                    var grt = new Date("06/28/2017 00:00:00");
+                    var grt = new Date("01/28/2018 00:00:00");
                     now.setTime(now.getTime() + 250);
                     days = (now - grt) / 1000 / 60 / 60 / 24;
                     dnum = Math.floor(days);
@@ -934,7 +951,6 @@ allprojects{
 </footer>
 
 <div class="progress-bar"></div>
-
 
 <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
