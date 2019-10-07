@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hexo-client</title>
+      <link href="/2019/10/07/hexo-client/"/>
+      <url>/2019/10/07/hexo-client/</url>
+      
+        <content type="html"><![CDATA[<p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">😄</span><br><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span></p><h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h1><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 测试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哈哈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux下使用scp命令来通过ssh传输文件</title>
       <link href="/2019/06/30/linux-copy-files-with-scp/"/>
       <url>/2019/06/30/linux-copy-files-with-scp/</url>

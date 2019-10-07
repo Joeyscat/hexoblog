@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://joeyscat.github.io/"/>
-  <updated>2019-10-07T03:29:48.693Z</updated>
+  <updated>2019-10-07T11:57:26.849Z</updated>
   <id>https://joeyscat.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-client</title>
+    <link href="https://joeyscat.github.io/2019/10/07/hexo-client/"/>
+    <id>https://joeyscat.github.io/2019/10/07/hexo-client/</id>
+    <published>2019-10-07T11:57:26.000Z</published>
+    <updated>2019-10-07T11:57:26.849Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;span class=&quot;github-emoji&quot; style=&quot;color: transparent;background:no-repeat
+        
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="https://joeyscat.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="哈哈" scheme="https://joeyscat.github.io/tags/%E5%93%88%E5%93%88/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下使用scp命令来通过ssh传输文件</title>
