@@ -386,21 +386,24 @@
 <li>原文：<a href="https://www.cnblogs.com/kevingrace/p/5991604.html" target="_blank" rel="noopener">linux下的缓存机制及清理buffer/cache/swap的方法梳理</a></li>
 </ul>
 <h4 id="1-缓存机制介绍"><a href="#1-缓存机制介绍" class="headerlink" title="1.缓存机制介绍"></a>1.缓存机制介绍</h4><p>在Linux系统中，为了提高文件系统性能，内核利用一部分物理内存分配出缓冲区，用于缓存系统操作和数据文件，当内核收到读写的请求时，内核先去缓存区找是否有请求的数据，有就直接返回，如果没有则通过驱动程序直接操作磁盘。<br>缓存机制优点：减少系统调用次数，降低CPU上下文切换和磁盘访问频率。<br>CPU上下文切换：CPU给每个进程一定的服务时间，当时间片用完后，内核从正在运行的进程中收回处理器，同时把进程当前运行状态保存下来，然后加载下一个任务，这个过程叫做上下文切换。实质上就是被终止运行进程与待运行进程的进程切换。</p>
-<h4 id="2-查看缓存区及内存使用情况"><a href="#2-查看缓存区及内存使用情况" class="headerlink" title="2.查看缓存区及内存使用情况"></a>2.查看缓存区及内存使用情况</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">joey@Joey:~$ top</span><br><span class="line">top - 16:59:44 up  7:55,  1 user,  load average: 0.60, 0.73, 0.87</span><br><span class="line">Tasks: 225 total,   1 running, 224 sleeping,   0 stopped,   0 zombie</span><br><span class="line">%Cpu(s):  1.8 us,  0.5 sy,  0.0 ni, 97.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</span><br><span class="line">KiB Mem :  8069972 total,  5060444 free,  1776368 used,  1233160 buff/cache</span><br><span class="line">KiB Swap:  8000508 total,  8000508 free,        0 used.  5590520 avail Mem</span><br></pre></td></tr></table></figure>
-
+<h4 id="2-查看缓存区及内存使用情况"><a href="#2-查看缓存区及内存使用情况" class="headerlink" title="2.查看缓存区及内存使用情况"></a>2.查看缓存区及内存使用情况</h4><pre class=" language-bash"><code class="language-bash">joey@Joey:~$ <span class="token function">top</span>
+<span class="token function">top</span> - 16:59:44 up  7:55,  1 user,  load average: 0.60, 0.73, 0.87
+Tasks: 225 total,   1 running, 224 sleeping,   0 stopped,   0 zombie
+%Cpu<span class="token punctuation">(</span>s<span class="token punctuation">)</span>:  1.8 us,  0.5 sy,  0.0 ni, 97.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem <span class="token keyword">:</span>  8069972 total,  5060444 free,  1776368 used,  1233160 buff/cache
+KiB Swap:  8000508 total,  8000508 free,        0 used.  5590520 avail Mem  </code></pre>
 <p>空闲内存=free + buffers + cached；<br>已用内存=total - 空闲内存；</p>
 <h4 id="3-缓存区分buffers和cached区别"><a href="#3-缓存区分buffers和cached区别" class="headerlink" title="3.缓存区分buffers和cached区别"></a>3.缓存区分buffers和cached区别</h4><p>内核在保证系统能正常使用物理内存和数据量读写情况下来分配缓冲区大小。<br>buffers用来缓存metadata及pages，可以理解为系统缓存，例如，vi打开一个文件。<br>cached是用来给文件做缓存，可以理解为数据块缓存，例如，dd if=/dev/zero of=/tmp/test count=1 bs=1G 测试写入一个文件，就会被缓存到缓冲区中，当下一次再执行这个测试命令时，写入速度会明显很快。</p>
 <h4 id="4-Swap用途"><a href="#4-Swap用途" class="headerlink" title="4.Swap用途"></a>4.Swap用途</h4><p>Swap意思是交换分区，通常我们说的虚拟内存，是从硬盘中划分出的一个分区。当物理内存不够用的时候，内核就会释放缓存区（buffers/cache）里一些长时间不用的程序，然后将这些程序临时放到Swap中，也就是说如果物理内存和缓存区内存不够用的时候，才会用到Swap。<br>swap清理：<br>swapoff -a &amp;&amp; swapon -a<br>注意：这样清理有个前提条件，空闲的内存必须比已经使用的swap空间大</p>
 <h4 id="5-释放缓存区内存的方法"><a href="#5-释放缓存区内存的方法" class="headerlink" title="5.释放缓存区内存的方法"></a>5.释放缓存区内存的方法</h4><ol>
 <li><p>清理pagecache（页面缓存）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/vm/drop_caches     或者 <span class="comment"># sysctl -w vm.drop_caches=1</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> 1 <span class="token operator">></span> /proc/sys/vm/drop_caches     或者 <span class="token comment" spellcheck="true"># sysctl -w vm.drop_caches=1</span></code></pre>
 </li>
 <li><p>清理dentries（目录缓存）和inodes</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 2 &gt; /proc/sys/vm/drop_caches     或者 <span class="comment"># sysctl -w vm.drop_caches=2</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> 2 <span class="token operator">></span> /proc/sys/vm/drop_caches     或者 <span class="token comment" spellcheck="true"># sysctl -w vm.drop_caches=2</span></code></pre>
 </li>
 <li><p>清理pagecache、dentries和inodes</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 3 &gt; /proc/sys/vm/drop_caches     或者 <span class="comment"># sysctl -w vm.drop_caches=3</span></span><br></pre></td></tr></table></figure>
-
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> 3 <span class="token operator">></span> /proc/sys/vm/drop_caches     或者 <span class="token comment" spellcheck="true"># sysctl -w vm.drop_caches=3</span></code></pre>
 </li>
 </ol>
 <p>上面三种方式都是临时释放缓存的方法，要想永久释放缓存，需要在/etc/sysctl.conf文件中配置：vm.drop_caches=1/2/3，然后sysctl -p生效即可！</p>
@@ -413,6 +416,130 @@
             </div>
             <hr/>
 
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
             
 
             <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
@@ -525,9 +652,10 @@
                         
                             配置阿里云镜像以下两种配置方式二选一
 全局配置新建配置文件 USER_HOME/.gradle/
-1$ vim ~/.gradle/init.gradle
-
-1234567891011121314151617181920212223allp
+$ vim ~/.gradle/init.gradle
+allprojects{
+    repositories {
+        def
                         
                     </div>
                     <div class="publish-info">

@@ -300,9 +300,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Linux下使用scp命令来通过ssh传输文件从服务器上下载文件到本地例如将服务器上的logo文件下载到本地1$ scp username@servername:/home/logo.png /home/joey/download
-
-上传本
+                                Linux下使用scp命令来通过ssh传输文件从服务器上下载文件到本地例如将服务器上的logo文件下载到本地$ scp username@servername:/home/logo.png /home/joey/download
+上传本地文
                             
                         </div>
                         <div class="publish-info">
@@ -397,9 +396,10 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             
                                 配置阿里云镜像以下两种配置方式二选一
 全局配置新建配置文件 USER_HOME/.gradle/
-1$ vim ~/.gradle/init.gradle
-
-1234567891011121314151617181920212223allp
+$ vim ~/.gradle/init.gradle
+allprojects{
+    repositories {
+        def
                             
                         </div>
                         <div class="publish-info">

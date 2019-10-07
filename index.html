@@ -389,19 +389,6 @@ $(function () {
             <div class="card">
                 <div class="card-content">
                     
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
-        </div>
-    </div>
-</div>
-                    
 
                     
 
@@ -440,9 +427,8 @@ $(function () {
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Linux下使用scp命令来通过ssh传输文件从服务器上下载文件到本地例如将服务器上的logo文件下载到本地1$ scp username@servername:/home/logo.png /home/joey/download
-
-上传本
+                                Linux下使用scp命令来通过ssh传输文件从服务器上下载文件到本地例如将服务器上的logo文件下载到本地$ scp username@servername:/home/logo.png /home/joey/download
+上传本地文
                             
                         </div>
                         <div class="publish-info">
@@ -594,9 +580,10 @@ A Coffee wit
                             
                                 配置阿里云镜像以下两种配置方式二选一
 全局配置新建配置文件 USER_HOME/.gradle/
-1$ vim ~/.gradle/init.gradle
-
-1234567891011121314151617181920212223allp
+$ vim ~/.gradle/init.gradle
+allprojects{
+    repositories {
+        def
                             
                         </div>
                         <div class="publish-info">
